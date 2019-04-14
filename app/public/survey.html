@@ -46,10 +46,10 @@ Let's find you the perfect friend!          </h1>
                       <div class="form-group">
 
                   <h3>Question 1</h3>
-                <label for="reserve-name">You love exploring new cities. </label>
+                <label for="unique-id">You love exploring new cities. </label>
                 <!-- <input type="text" class="form-control" id="reserve-name"> -->
               </br>
-              <select name="answer">
+              <select name="answer" id="scoreNumber1">
                         <option value="1">1- Strongly Disagree</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -61,9 +61,9 @@ Let's find you the perfect friend!          </h1>
               <div class="form-group">
                     <h3>Question 2</h3>
 
-                <label for="reserve-phone">Outdoor activities are awesome!</label>
+                <label for="unique-id">Outdoor activities are awesome!</label>
             </br>
-            <select name="answer">
+            <select name="answer" id="scoreNumber2">
                       <option value="1">1- Strongly Disagree</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -75,9 +75,9 @@ Let's find you the perfect friend!          </h1>
               <div class="form-group">
                     <h3>Question 3</h3>
 
-                <label for="reserve-email">Sundays are for sleeping!</label>
+                <label for="unique-id">Sundays are for sleeping!</label>
             </br>
-            <select name="answer">
+            <select name="answer" id="scoreNumber3">
                       <option value="1">1- Strongly Disagree</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -88,9 +88,9 @@ Let's find you the perfect friend!          </h1>
               <div class="form-group">
                     <h3>Question 4</h3>
 
-                <label for="reserve-unique-id">Always hit snooze!</label>
+                <label for="unique-id">Always hit snooze!</label>
             </br>
-            <select name="answer">
+            <select name="answer" id="scoreNumber4">
                       <option value="1">1- Strongly Disagree</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -101,9 +101,9 @@ Let's find you the perfect friend!          </h1>
               <div class="form-group">
                     <h3>Question 5</h3>
 
-                <label for="reserve-unique-id">Wine is better than beer.</label>
+                <label for="unique-id">Wine is better than beer.</label>
             </br>
-            <select name="answer">
+            <select name="answer" id="scoreNumber5">
                       <option value="1">1- Strongly Disagree</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -114,9 +114,9 @@ Let's find you the perfect friend!          </h1>
               <div class="form-group">
                     <h3>Question 6</h3>
 
-                <label for="reserve-unique-id">Vacay: Beach > Snow!</label>
+                <label for="unique-id">Vacay: Beach > Snow!</label>
             </br>
-            <select name="answer">
+            <select name="answer" id="scoreNumber6">
                       <option value="1">1- Strongly Disagree</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -127,9 +127,9 @@ Let's find you the perfect friend!          </h1>
               <div class="form-group">
                     <h3>Question 7</h3>
 
-                <label for="reserve-unique-id">Countryside is way better that city life!</label>
+                <label for="unique-id">Countryside is way better that city life!</label>
             </br>
-            <select name="answer">
+            <select name="answer" id="scoreNumber7">
                       <option value="1">1- Strongly Disagree</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -140,9 +140,9 @@ Let's find you the perfect friend!          </h1>
               <div class="form-group">
                     <h3>Question 8</h3>
 
-                <label for="reserve-unique-id">Basketball is the best sport ever!</label>
+                <label for="unique-id">Basketball is the best sport ever!</label>
             </br>
-            <select name="answer">
+            <select name="answer" id="scoreNumber8">
                       <option value="1">1- Strongly Disagree</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -153,9 +153,9 @@ Let's find you the perfect friend!          </h1>
               <div class="form-group">
                     <h3>Question 9</h3>
 
-                <label for="reserve-unique-id">I could watch the sunset everyday!</label>
+                <label for="unique-id">I could watch the sunset everyday!</label>
             </br>
-            <select name="answer">
+            <select name="answer" id="scoreNumber9">
                       <option value="1">1- Strongly Disagree</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -166,9 +166,9 @@ Let's find you the perfect friend!          </h1>
               <div class="form-group">
                     <h3>Question 10</h3>
 
-                <label for="reserve-unique-id">Avocados all day!</label>
+                <label for="unique-id">Avocados all day!</label>
             </br>
-            <select name="answer">
+            <select name="answer" id="scoreNumber10">
                       <option value="1">1- Strongly Disagree</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -187,8 +187,8 @@ Let's find you the perfect friend!          </h1>
     <footer class="footer">
       <div class="container">
         <p>
-          <a href="/api/tables">API Table Link</a> |
-          <a href="/api/waitlist">API Wait List</a>
+            <p><a href="/./app/data/friends.js">API Friend Link</a> 
+
       </div>
     </footer>
 
@@ -197,3 +197,37 @@ Let's find you the perfect friend!          </h1>
 </body>
 
 </html>
+
+<!-- Send data to the server -->
+
+<script type="text/javascript">
+
+$(".submit").on("click", function(event){
+  event.preventDefault();
+
+  //grab the form elements
+  var newFriends ={
+        name: $("#add-name").val().trim(),
+        photo: $("#add-pic").val().trim(),
+        scores: $("#scoreNumber1").val().trim(),
+        scores: $("#scoreNumber2").val().trim(),
+        scores: $("#scoreNumber3").val().trim(),
+        scores: $("#scoreNumber4").val().trim(),
+        scores: $("#scoreNumber5").val().trim(),
+        scores: $("#scoreNumber6").val().trim(),
+        scores: $("#scoreNumber7").val().trim(),
+        scores: $("#scoreNumber8").val().trim(),
+        scores: $("#scoreNumber9").val().trim(),
+        scores: $("#scoreNumber10").val().trim(),
+
+  };
+
+  console.log(newFriends);
+
+})
+
+
+
+
+
+</script>
