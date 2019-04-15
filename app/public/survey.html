@@ -17,6 +17,8 @@
 
   <div class="container">
 
+    <!-- image does not work - check it -->
+
     <div class="jumbotron" style="background-image: url('friendfinder.jpg')">
 
       <h1 class="text-center" >
@@ -209,20 +211,27 @@ $(".submit").on("click", function(event){
   var newFriends ={
         name: $("#add-name").val().trim(),
         photo: $("#add-pic").val().trim(),
-        scores: $("#scoreNumber1").val().trim(),
-        scores: $("#scoreNumber2").val().trim(),
-        scores: $("#scoreNumber3").val().trim(),
-        scores: $("#scoreNumber4").val().trim(),
-        scores: $("#scoreNumber5").val().trim(),
-        scores: $("#scoreNumber6").val().trim(),
-        scores: $("#scoreNumber7").val().trim(),
-        scores: $("#scoreNumber8").val().trim(),
-        scores: $("#scoreNumber9").val().trim(),
-        scores: $("#scoreNumber10").val().trim(),
+        //a
+        scores: [
+        $("#scoreNumber1").val().trim(),
+        $("#scoreNumber2").val().trim(),
+        $("#scoreNumber3").val().trim(),
+        $("#scoreNumber4").val().trim(),
+        $("#scoreNumber5").val().trim(),
+        $("#scoreNumber6").val().trim(),
+        $("#scoreNumber7").val().trim(),
+        $("#scoreNumber8").val().trim(),
+        $("#scoreNumber9").val().trim(),
+        $("#scoreNumber10").val().trim()
+      ]
 
   };
 
   console.log(newFriends);
+
+  $.post("/api/friends", newFriends, function(data){
+    console.log(data);
+  })
 
 })
 
